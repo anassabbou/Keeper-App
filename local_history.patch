@@ -1,0 +1,13 @@
+Index: src/components/CreateArea.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/CreateArea.jsx b/src/components/CreateArea.jsx
+--- a/src/components/CreateArea.jsx	
++++ b/src/components/CreateArea.jsx	(date 1718656329715)
+@@ -1,4 +1,3 @@
+-// eslint-disable-next-line no-unused-vars
+ import React from "react"
+ import { useState } from "react";
+ import AddIcon from "@material-ui/icons/Add";
