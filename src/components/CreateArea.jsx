@@ -1,8 +1,5 @@
-import React from "react"
 import { useState } from "react";
-import AddIcon from "@material-ui/icons/Add";
-import Fab from "@material-ui/core/Fab";
-import Zoom from "@material-ui/core/Zoom";
+import {Fab, Zoom} from "@mui/material";
 
 function CreateArea(props) {
     const [isExpanded, setExpanded] = useState(false);
@@ -24,6 +21,7 @@ function CreateArea(props) {
     }
 
     function submitNote(event) {
+        // eslint-disable-next-line react/prop-types
         props.onAdd(note);
         setNote({
             title: "",
@@ -57,8 +55,10 @@ function CreateArea(props) {
                     rows={isExpanded ? 3 : 1}
                 />
                 <Zoom in={isExpanded}>
-                    <Fab onClick={submitNote}>
-                        <AddIcon />
+                    <Fab onClick={submitNote} aria-label="add">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                        </svg>
                     </Fab>
                 </Zoom>
             </form>

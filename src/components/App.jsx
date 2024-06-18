@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
@@ -10,8 +9,16 @@ function App() {
 
     function addNote(newNote) {
         setNotes(prevNotes => {
-            return [...prevNotes, newNote];
+            newNote.title=newNote.title.trim();
+            newNote.content=newNote.content.trim();
+                if(newNote.title==="" && newNote.content===""){
+                    return [...prevNotes];
+                 }else{
+                    return [...prevNotes, newNote];
+                }
+
         });
+
     }
 
     function deleteNote(id) {
@@ -21,6 +28,7 @@ function App() {
             });
         });
     }
+
 
     return (
         <div>
@@ -36,7 +44,8 @@ function App() {
                         onDelete={deleteNote}
                     />
                 );
-            })}
+            })
+            }
             <Footer />
         </div>
     );
